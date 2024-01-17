@@ -1,0 +1,233 @@
+/* 폰트컬러나 폰트크기, 행간, 공통적 특성 같은 거는 body에 넣어주기   */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    font-family: 'GmarketSansMedium';
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.inner {
+    /* background-color: seagreen; */
+    width: 1100px;
+    /* block 요소 가운데 정렬 margin: 0 auto */
+    margin: 0 auto;
+    position: relative;
+}
+
+#head_layout {
+    background-color: #f6f5f0;
+}
+
+#head_layout > .inner {
+    /* 바로 밑에 자식만 선택 > */
+    height: 120px;
+}
+
+#head_layout .logo {
+    position: absolute;
+    /* top, bottom으로 부모 크기 나타내주는 너낌.... */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* 부모 크기가 정해졌으니까, 자신의 크기를 명시?하는 느낌 */
+    height: 75px;
+    /* 그 상태에서 마진을 줘서 가운데에 위치하도록 할 수 있다.  */
+    margin: auto;
+    /* display: none; */
+}
+
+#head_layout .inner .util_menu {
+    display: flex;
+    justify-content: right;
+}
+
+#head_layout .inner .util_menu .menu {
+    display: flex;
+    justify-content: right;
+}
+
+#head_layout .inner .util_menu .menu li {
+    position: relative;
+}
+
+#head_layout .inner .util_menu .menu li:first-child::before {
+    /* ::before는 div 태그가 하나 생겼다고 생각하면 된대, 그래서 ::before 로 선택해줘야 함  */
+    display: none;
+}
+
+#head_layout .inner .util_menu .menu li::before {
+    /* before 선택자 안에서는, 실제 요소의 block 과는 다름 ! */
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+
+#head_layout .inner .util_menu .menu li a {
+    /* a 태그는 폰트 속성이 쎄기 때문에, 폰트 변형을 하려면, a 태그에 직접 주는 게 좋다! */
+    /* background-color: lightpink; */
+    font-size: 12px;
+    padding: 11px 16px;
+    color: #656565;
+    display: block;
+    line-height: 1em;
+}
+
+#head_layout .inner .util_menu .menu li a:hover {
+    color: #333;
+}
+
+#head_layout .inner .search {
+    /* background-color: tomato; */
+    height: 34px;
+    position: relative;
+    
+}
+
+#head_layout .inner .search input {
+    width: 34px;
+    height: 34px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    /* 브라우저마다 속성이 다르니까, 지정색을 줘서 어디서나 같도록 통일성을 만들어주기.  */
+    border: 1px solid #ccc;
+    box-sizing: border-box;    
+    /* inputbox에만 해당되는 속성: 클릭했을때 하이라이트(?) 안됨 */
+    outline: 0;
+    color: #656565;
+    background-color: #fff;
+    transition: width .7s;
+
+}
+
+#head_layout .inner .search input:focus {
+    width: 190px;
+    border-color: #007042;
+}
+
+
+#head_layout .inner .search span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    height: 24px;
+}
+
+#head_layout .inner .main_menu {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#head_layout .inner .main_menu .item { 
+
+}
+
+#head_layout .inner .main_menu .item:hover .item_contents { 
+    display: block;
+}
+
+#head_layout .inner .main_menu .item .item_name { 
+    padding: 20px;
+    font-size: 14px;
+
+}
+
+#head_layout .inner .main_menu .item:hover .item_name { 
+    background-color: #2c2a29;
+    color: #fff;
+}
+
+#head_layout .inner .main_menu .item .item_contents { 
+    position: fixed;
+    /* top bottom 따로 안주면 요소가 시작하는 부분부터 영역을 잡는다. */
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu { 
+    background-color: #2c2a29;
+    height: auto;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul {
+    display: flex;
+    padding: 20px 0;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul > li {
+    width: 220px;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul > li h3 {
+    font-weight: 600;
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul > li ul {
+
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul > li ul li {
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    /* 손가락 모양으로 커서 바꾸깅 ~! */
+    cursor: pointer; 
+
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_menu > ul > li ul li:hover {
+    color: #669900;
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_text { 
+    background-image: url(../images/main_menu_pattern.jpg);
+    background-repeat: repeat;
+    height: auto; 
+    /* 근데 안쓰면 알아서 auto로 적용된대. */
+    padding: 25px 0;
+
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_text .text_tit {
+    color: #999;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+
+#head_layout .inner .main_menu .item .item_contents .contents_text .text_content {
+    color: #888;
+    font-size: 11px;
+    margin: 4px 0 14px;
+    
+}

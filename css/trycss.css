@@ -1,0 +1,98 @@
+img {
+    display:block;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn {
+    width: 130px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box; /* 테두리를 기준으로 크기를 정함*/
+}
+
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#head_layout {
+    background-color: #f6f5f0;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    z-index:10;
+}
+
+#head_layout > .inner {
+    height: 120px;
+}
+
+#head_layout .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    margin: auto;
+}
+
+#head_layout .inner .util_menu {
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    top: 10px; right: 0;
+}
+
+#head_layout .inner .util_menu .menu {
+    display: flex;
+}
+
+#head_layout .inner .util_menu .menu li {
+    position: relative;
+}
+
+#head_layout .inner .util_menu .menu li::before {
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#head_layout .inner .util_menu .menu li:first-child::before {
+    display: none;
+}
+
+#head_layout .inner .util_menu .menu li a {
+    font-size: 12px;
+    padding: 11px 16px; /* 상하 좌우 */
+    color: #656565;
+    display: block;
+    line-height: 1em;
+}
+
+#head_layout .inner .util_menu .menu li a:hover {
+    color : #333;
+}
+
+#head_layout .inner .search {
+    height: 34px;
+    position: relative;
+}
+
+#head_layout .inner .search {
+    height: 34px;
+    position: relative;
+}
